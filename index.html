@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+</head>
+
+<body>
+  <nav class="navbar">
+    <p>
+      Dashboard
+    </p>
+  </nav>
+  <main class="content">
+    <aside class="sidebar">
+      <section class="sidebar__search-block">
+        <input type="search" name="search-invoice" id="search-invoice" aria-label="Enter Query to search invoice"
+          placeholder="Search.." class="sidebar__search-block__input">
+        <h1>
+          Invoices - 54
+        </h1>
+      </section>
+      <ul>
+        <li>
+          <div class="">
+            <h4>
+              Inv. #1 - 1122
+            </h4>
+            <time>11:35 AM - Today</time>
+          </div>
+          <div class="">
+            <p>Items - 03</p>
+            <p>Jeph Paul ALapat</p>
+          </div>
+          <p>$1,240</p>
+        </li>
+        <li>
+          <div class="">
+            <h4>
+              Inv. #2 - 1234
+            </h4>
+            <time>11:35 AM - Today</time>
+          </div>
+          <div class="">
+            <p>Items - 03</p>
+            <p>Jeph Paul ALapat</p>
+          </div>
+          <p>$1,240</p>
+        </li>
+      </ul>
+    </aside>
+    <section>
+      <button>Add new Invoice</button>
+      <h2>Invoice Details</h2>
+      <section>
+        <div class="">
+          <div class="">
+            <h3>Invoice</h3>
+            <p># INV1122</p>
+            <time>11:35 AM - Today</time>
+          </div>
+          <div class="">
+            <p>Customer Details</p>
+            <p>John Doe</p>
+            <a href="mail:johndoe@serviceprovider.com">
+              johndoe@serviceprovider.com
+            </a>
+          </div>
+          <button>
+            Print <img src="./assets/printer-blue@3x.png" alt="Printer Icon">
+          </button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Unit Price</th>
+              <!-- Added extra total in table so that user can see item wise total before seeing the total of all the items as it will ease up user calculation/cross-checking -->
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Item 1</td>
+              <td>1</td>
+              <td>$100</td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>Item 2</td>
+              <td>2</td>
+              <td>$200</td>
+              <td>$400</td>
+            </tr>
+            <tr>
+              <td>Item 3</td>
+              <td>3</td>
+              <td>$300</td>
+              <td>$600</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="">
+          <div class="">
+            <h3>Sub Total</h3>
+            <p>$1,240</p>
+          </div>
+          <div class="">
+            <h3>Tax</h3>
+            <p>$0</p>
+          </div>
+          <div class="">
+            <h3>Discount</h3>
+            <p>$0</p>
+          </div>
+        </div>
+        <div class="">
+          <div class="">
+            <h3>Grand Total</h3>
+            <p>$1,240</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>

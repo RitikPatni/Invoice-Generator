@@ -1,0 +1,22 @@
+.sidebar {
+  background-color: var(--color-sidebar);
+  color: var(--color-white);
+  &__search-block {
+    background-color: var(--color-search-background);
+    padding: 0.5rem;
+    display: grid;
+    gap: 1rem;
+    &__input {
+      padding: 0.75rem 0.5rem 0.75rem 2.25rem;
+      border-radius: 2rem;
+      background-image: url(../../assets/search-icon@3x.png);
+      background-size: 1rem;
+      background-repeat: no-repeat;
+      background-position: 5% center;
+      font-size: var(--font-base);
+      background-color: var(--color-search-bar);
+      color: var(--color-search-bar-text);
+      border: none;
+    }
+  }
+}

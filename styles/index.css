@@ -1,0 +1,181 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+:root {
+  --color-white: #fff;
+  --color-sidebar: #303048;
+  --color-background: #f0f0f0;
+  --color-navbar: #306090;
+  --color-search-background: #484860;
+  --color-search-bar: #353e48;
+  --color-search-bar-text: #778495;
+  --color-selected-invoice-background: #404b57;
+  --color-fab: #ff64a4;
+  --color-text: #383f48;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 1.75rem;
+  --font-size-xxxl: 2rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
+  --font-size-xxs: 0.625rem; }
+
+.navbar {
+  background-color: var(--color-navbar);
+  color: var(--color-white);
+  padding: 1rem; }
+
+.content {
+  display: grid;
+  grid-template-columns: 20rem 1fr; }
+
+.sidebar {
+  background-color: var(--color-sidebar);
+  color: var(--color-white); }
+  .sidebar__search-block {
+    background-color: var(--color-search-background);
+    padding: 0.5rem;
+    display: grid;
+    gap: 1rem; }
+    .sidebar__search-block__input {
+      padding: 0.75rem 0.5rem 0.75rem 2.25rem;
+      border-radius: 2rem;
+      background-image: url(../../assets/search-icon@3x.png);
+      background-size: 1rem;
+      background-repeat: no-repeat;
+      background-position: 5% center;
+      font-size: var(--font-base);
+      background-color: var(--color-search-bar);
+      color: var(--color-search-bar-text);
+      border: none; }
+
+/*# sourceMappingURL=index.css.map */
