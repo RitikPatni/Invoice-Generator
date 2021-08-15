@@ -11,7 +11,7 @@
       background-image: url(../../assets/search-icon@3x.png);
       background-size: 1rem;
       background-repeat: no-repeat;
-      background-position: 5% center;
+      background-position: 1rem center;
       font-size: var(--font-size-base);
       background-color: var(--color-search-bar);
       color: var(--color-search-bar-text);
@@ -36,7 +36,11 @@
       font-weight: var(--font-weight-semibold);
       color: var(--color-sidebar-invoice-primary);
       border-top: 1px solid var(--color-sidebar-invoice-border);
-      &--selected {
+      background: transparent;
+      border: none;
+      width: 100%;
+      &--selected,
+      &:hover {
         background-color: var(--color-selected-invoice-background);
         color: var(--color-white);
       }
@@ -55,6 +59,7 @@
         &__left {
           display: grid;
           gap: 0.5rem;
+          text-align: left;
           &__name {
             color: var(--color-sidebar-invoice-name);
           }

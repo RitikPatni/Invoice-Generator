@@ -1,6 +1,6 @@
 .invoice {
   background-color: var(--color-background);
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   display: grid;
   gap: 2rem;
   align-content: start;
@@ -124,6 +124,24 @@
           font-size: var(--font-size-base);
         }
       }
+    }
+  }
+  &__no-data {
+    font-weight: var(--font-weight-semibold);
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    &__title {
+      color: var(--color-invoice-table-title);
+      font-size: var(--font-size-lg);
+    }
+    &__button {
+      font-size: var(--font-size-sm);
+      padding: 1rem 2rem;
+      background-color: var(--color-sidebar-invoice-name);
+      color: var(--color-white);
+      border-radius: 0.25rem;
+      border: none;
     }
   }
 }

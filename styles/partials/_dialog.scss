@@ -35,6 +35,7 @@
         display: flex;
         gap: 2rem;
         font-weight: var(--font-weight-semibold);
+        align-items: center;
         &__value {
           color: var(--color-dialog-subtitle);
           font-size: var(--font-size-sm);
@@ -79,13 +80,51 @@
         }
       }
     }
+    &__tax-discount-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      &__left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      &__right {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-dialog-subtitle);
+        font-size: var(--font-size-sm);
+        &__value {
+          color: var(--color-black);
+        }
+      }
+    }
     &__footer {
       background-color: var(--color-dialog-footer);
       display: flex;
       justify-content: end;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       border-bottom-left-radius: 0.25rem;
       border-bottom-right-radius: 0.25rem;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-dialog-subtitle);
+      font-size: var(--font-size-sm);
+      &--space-between {
+        justify-content: space-between;
+      }
+      &__block {
+        display: grid;
+        gap: 0.5rem;
+        &__value {
+          color: var(--color-dialog-subtitle);
+          &--black {
+            color: var(--color-black);
+          }
+        }
+      }
       &__button {
         background-color: var(--color-sidebar-invoice-name);
         color: var(--color-white);
