@@ -50,7 +50,7 @@ function showSelectedInvoice(invoiceId) {
     }
   })
   const invoiceDetailArea = document.getElementById('printable-area');
-  let itemRowsHTMLString;
+  let itemRowsHTMLString = '';
 
   invoice.items.forEach(function (item) {
     itemRowsHTMLString += returnItemHTMLString(item)
@@ -64,7 +64,8 @@ function showSelectedInvoice(invoiceId) {
             <time class="invoice__details__top-row__left__time">${generateFormattedDateTimeString(invoice.date)}</time>
           </div>
           <div class="invoice__details__top-row__right">
-${customerDataHTMLString}            <button class="invoice__details__top-row__right__button"
+${customerDataHTMLString}
+            <button class="invoice__details__top-row__right__button"
               onclick="onclick=printJS({printable:'printable-area',type:'html',css:'./styles/index.css'})">
               <p>PRINT</p> <img src="./assets/printer-blue@3x.png" alt="Printer Icon"
                 class="invoice__details__top-row__right__button__image">

@@ -469,37 +469,38 @@ body {
         border: none;
         box-shadow: 0 0px 1px rgba(0, 0, 0, 0.02), 0 0px 2.5px rgba(0, 0, 0, 0.028), 0 0px 4.6px rgba(0, 0, 0, 0.035), 0 0px 8.3px rgba(0, 0, 0, 0.042), 0 0px 15.5px rgba(0, 0, 0, 0.05), 0 0px 37px rgba(0, 0, 0, 0.07); }
 
-@media print {
-  .table {
-    width: 100%;
-    margin-top: 2rem; } }
-.table__head__item {
-  padding: 1rem;
-  border-top: 1px solid var(--color-invoice-table-border);
-  border-bottom: 1px solid var(--color-invoice-table-border);
-  color: var(--color-invoice-table-title);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-sm); }
-  .table__head__item--align-left {
-    text-align: left; }
-  .table__head__item--align-right {
-    text-align: right; }
-  .table__head__item--align-center {
-    text-align: center; }
-.table__body__item {
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--color-invoice-table-border);
-  border-bottom: 1px solid var(--color-invoice-table-border);
-  font-weight: var(--font-weight-semibold); }
-  .table__body__item--align-left {
-    text-align: left; }
-  .table__body__item--align-right {
-    text-align: right; }
-  .table__body__item--align-center {
-    text-align: center; }
-.table--wrapper {
-  max-height: 40vh;
-  overflow-y: auto; }
+.table {
+  width: 100%; }
+  @media print {
+    .table {
+      margin-top: 2rem; } }
+  .table__head__item {
+    padding: 1rem;
+    border-top: 1px solid var(--color-invoice-table-border);
+    border-bottom: 1px solid var(--color-invoice-table-border);
+    color: var(--color-invoice-table-title);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm); }
+    .table__head__item--align-left {
+      text-align: left; }
+    .table__head__item--align-right {
+      text-align: right; }
+    .table__head__item--align-center {
+      text-align: center; }
+  .table__body__item {
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--color-invoice-table-border);
+    border-bottom: 1px solid var(--color-invoice-table-border);
+    font-weight: var(--font-weight-semibold); }
+    .table__body__item--align-left {
+      text-align: left; }
+    .table__body__item--align-right {
+      text-align: right; }
+    .table__body__item--align-center {
+      text-align: center; }
+  .table--wrapper {
+    max-height: 40vh;
+    overflow-y: auto; }
 
 .hidden {
   display: none !important; }
