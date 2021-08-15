@@ -1,0 +1,51 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1rem;
+  &--single-row {
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    justify-content: space-between;
+  }
+  &--fields {
+    display: grid;
+    gap: 1rem;
+    align-content: space-between;
+  }
+  &__field {
+    display: grid;
+    gap: 0.5rem;
+    &__label {
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
+    }
+    &__input {
+      border: 1px solid var(--color-invoice-table-border);
+      border-radius: 0.25rem;
+      padding: 0.75rem 1rem;
+      &--number {
+        width: 2rem;
+        -webkit-appearance: none;
+        appearance: none;
+        -moz-appearance: textfield;
+        margin: 0;
+        text-align: center;
+      }
+      &--no-resize {
+        resize: none;
+      }
+    }
+  }
+  &__button {
+    background-color: var(--white);
+    color: var(--color-sidebar-invoice-name);
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-sidebar-invoice-name);
+    padding: 1rem;
+    justify-self: end;
+    display: grid;
+    place-items: center;
+    &__image {
+      width: 1.25rem;
+    }
+  }
+}

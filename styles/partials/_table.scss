@@ -1,0 +1,42 @@
+.table {
+  @media print {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  &__head {
+    &__item {
+      padding: 1rem;
+      border-top: 1px solid var(--color-invoice-table-border);
+      border-bottom: 1px solid var(--color-invoice-table-border);
+      color: var(--color-invoice-table-title);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-sm);
+      &--align-left {
+        text-align: left;
+      }
+      &--align-right {
+        text-align: right;
+      }
+      &--align-center {
+        text-align: center;
+      }
+    }
+  }
+  &__body {
+    &__item {
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--color-invoice-table-border);
+      border-bottom: 1px solid var(--color-invoice-table-border);
+      font-weight: var(--font-weight-semibold);
+      &--align-left {
+        text-align: left;
+      }
+      &--align-right {
+        text-align: right;
+      }
+      &--align-center {
+        text-align: center;
+      }
+    }
+  }
+}

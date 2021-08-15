@@ -1,0 +1,18 @@
+.customer-info {
+  display: grid;
+  gap: 0.5rem;
+  text-align: right;
+  &__title {
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    color: var(--color-invoice-title);
+    font-size: var(--font-size-xs);
+  }
+  &__name {
+    font-weight: var(--font-weight-semibold);
+  }
+  &__email {
+    text-decoration: none;
+    color: var(--color-invoice-time);
+  }
+}

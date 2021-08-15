@@ -8,7 +8,7 @@
   <title>Invoice Generator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
@@ -78,7 +78,7 @@
       </ul>
     </aside>
     <section class="invoice">
-      <button class="invoice__fab" aria-label="Add New Invoice" title="Add New Invoice"><img
+      <button class="invoice__fab" aria-label="Add New Invoice" title="Add New Invoice" onclick="toggleDialog()"><img
           src="./assets/plus-white@3x.png" alt="Plus icon" class="invoice__fab__image"></button>
       <h2 class="invoice__title">INVOICE DETAILS</h2>
       <section class="invoice__details" id="printable-area">
@@ -89,13 +89,13 @@
             <time class="invoice__details__top-row__left__time">11:35 AM - Today</time>
           </div>
           <div class="invoice__details__top-row__right">
-            <div class="invoice__details__top-row__right__content">
-              <p class="invoice__details__top-row__right__content__title">Customer Details</p>
-              <p class="invoice__details__top-row__right__content__name">John Doe</p>
-              <a href="mail:johndoe@serviceprovider.com" class="invoice__details__top-row__right__content__email">
+            <article class="customer-info">
+              <p class="customer-info__title">Customer Details</p>
+              <p class="customer-info__name">John Doe</p>
+              <a href="mail:johndoe@serviceprovider.com" class="customer-info__email">
                 johndoe@serviceprovider.com
               </a>
-            </div>
+            </article>
             <button class="invoice__details__top-row__right__button"
               onclick="onclick=printJS({printable:'printable-area',type:'html',css:'./styles/index.css'})">
               <p>PRINT</p> <img src="./assets/printer-blue@3x.png" alt="Printer Icon"
@@ -103,43 +103,43 @@
             </button>
           </div>
         </div>
-        <table class="invoice__details__table">
-          <thead class="invoice__details__table__head">
+        <table class="table">
+          <thead class="table__head">
             <tr>
-              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-left">ITEM</th>
-              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-center">QUANTITY
+              <th class="table__head__item table__head__item--align-left">ITEM</th>
+              <th class="table__head__item table__head__item--align-center">QUANTITY
               </th>
               <!-- Added extra total in table so that user can see item wise total before seeing the total of all the items as it will ease up user calculation/cross-checking -->
-              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-center">UNIT
+              <th class="table__head__item table__head__item--align-center">UNIT
                 PRICE</th>
-              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-right">TOTAL
+              <th class="table__head__item table__head__item--align-right">TOTAL
               </th>
             </tr>
           </thead>
-          <tbody class="invoice__details__table__body">
+          <tbody class="table__body">
             <tr>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-left">Item 1
+              <td class="table__body__item table__body__item--align-left">Item 1
               </td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">1</td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">$100
+              <td class="table__body__item table__body__item--align-center">1</td>
+              <td class="table__body__item table__body__item--align-center">$100
               </td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-right">$100</td>
+              <td class="table__body__item table__body__item--align-right">$100</td>
             </tr>
             <tr>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-left">Item 2
+              <td class="table__body__item table__body__item--align-left">Item 2
               </td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">2</td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">$200
+              <td class="table__body__item table__body__item--align-center">2</td>
+              <td class="table__body__item table__body__item--align-center">$200
               </td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-right">$400</td>
+              <td class="table__body__item table__body__item--align-right">$400</td>
             </tr>
             <tr>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-left">Item 3
+              <td class="table__body__item table__body__item--align-left">Item 3
               </td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">3</td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">$300
+              <td class="table__body__item table__body__item--align-center">3</td>
+              <td class="table__body__item table__body__item--align-center">$300
               </td>
-              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-right">$600</td>
+              <td class="table__body__item table__body__item--align-right">$600</td>
             </tr>
           </tbody>
         </table>
@@ -166,6 +166,126 @@
       </section>
     </section>
   </main>
+  <article class="dialog " id="dialog">
+    <div class="dialog__content">
+      <button aria-label="Close Button" title="Close Button" class="dialog__content__close-button"
+        onclick="toggleDialog()"><img src="./assets/close-btn@3x.png" alt="Close Button"
+          class="dialog__content__close-button__image"></button>
+      <div class="dialog__content__main">
+        <div class="dialog__content__main__top-row">
+          <h2 class="dialog__content__main__top-row__title">Create New Invoice</h2>
+          <p class="dialog__content__main__top-row__value">ORDER NO: 1234</p>
+        </div>
+        <div class="show-customer dialog__content__main__customer">
+          <p class="dialog__content__main__customer__title step-1 hidden">CUSTOMER DETAILS</p>
+          <p class="dialog__content__main__customer__title step-2 hidden">PRODUCT DETAILS</p>
+          <button class="dialog__content__main__customer__button step-1 hidden" onclick="submitCustomerDetails()">
+            <p>Skip</p> <img src="./assets/skip-icon@3x.png" alt="Skip Icon"
+              class="dialog__content__main__customer__button__image">
+          </button>
+          <div class="dialog__content__main__customer__right step-2 hidden">
+            <article class="customer-info ">
+              <p class="customer-info__title">Customer Details</p>
+              <p class="customer-info__name">John Doe</p>
+              <a href="mail:johndoe@serviceprovider.com" class="customer-info__email">
+                johndoe@serviceprovider.com
+              </a>
+            </article>
+            <button aria-label="Edit Customer Details" title="Edit Customer Details"
+              class="dialog__content__main__customer__right__edit-button">
+              <img src="./assets/edit@3x.png" alt="Edit Icon"
+                class="dialog__content__main__customer__right__edit-button__image">
+            </button>
+          </div>
+        </div>
+        <form class="show-customer form step-1 hidden" onsubmit="submitCustomerDetails(event)">
+          <fieldset class="form__field">
+            <label for="name" class="form__field__label">
+              Full Name*
+            </label>
+            <input type="text" name="name" id="name" required placeholder="Customer Name" class="form__field__input">
+          </fieldset>
+          <fieldset class="form__field">
+            <label for="phone" class="form__field__label">Phone Number*</label>
+            <input type="tel" inputmode="numeric" name="phone" id="phone" required class="form__field__input">
+          </fieldset>
+          <fieldset class="form__field">
+            <label for="address" class="form__field__label">Address</label>
+            <textarea name="address" id="address" cols="30" rows="10" placeholder="Complete Address"
+              class="form__field__input form__field__input--no-resize"></textarea>
+          </fieldset>
+          <div class="form--fields">
+            <fieldset class="form__field">
+              <label for="email" class="form__field__label">Email ID*</label>
+              <input type="email" name="email" id="email" required placeholder="Customer Email Address"
+                class="form__field__input">
+            </fieldset>
+            <fieldset class="form__field">
+              <label for="pincode" class="form__field__label">Pincode</label>
+              <input type="text" inputmode="numeric" name="pincode" id="pincode" placeholder="560067"
+                class="form__field__input">
+            </fieldset>
+          </div>
+        </form>
+        <table class="table step-2 hidden">
+          <thead class="table__head">
+            <tr>
+              <th class="table__head__item table__head__item--align-left">ITEM</th>
+              <th class="table__head__item table__head__item--align-center">QUANTITY
+              </th>
+
+              <th class="table__head__item table__head__item--align-center">UNIT
+                PRICE</th>
+              <th class="table__head__item table__head__item--align-right">TOTAL
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table__body">
+            <tr>
+              <td class="table__body__item table__body__item--align-left">Item 1
+              </td>
+              <td class="table__body__item table__body__item--align-center">1</td>
+              <td class="table__body__item table__body__item--align-center">$100
+              </td>
+              <td class="table__body__item table__body__item--align-right">$100</td>
+            </tr>
+            <tr>
+              <td class="table__body__item table__body__item--align-left">Item 2
+              </td>
+              <td class="table__body__item table__body__item--align-center">2</td>
+              <td class="table__body__item table__body__item--align-center">$200
+              </td>
+              <td class="table__body__item table__body__item--align-right">$400</td>
+            </tr>
+            <tr>
+              <td class="table__body__item table__body__item--align-left">Item 3
+              </td>
+              <td class="table__body__item table__body__item--align-center">3</td>
+              <td class="table__body__item table__body__item--align-center">$300
+              </td>
+              <td class="table__body__item table__body__item--align-right">$600</td>
+            </tr>
+          </tbody>
+        </table>
+        <form action="" class=" form form--single-row step-2 hidden">
+          <input type="text" name="item-name" id="item-name" placeholder="Please Enter Item Name" required
+            class="form__field__input">
+          <input type="number" name="quantity" id="quantity" placeholder="0" required min="1"
+            class="form__field__input form__field__input--number">
+          <input type="number" name="price" id="price" placeholder="0.00" required min="1" step=".01"
+            class="form__field__input form__field__input--number">
+          <button type="submit" aria-label="Add Item" title="Add Item" class="form__button">
+            <img src="./assets/enter-icon@3x.png" alt="Enter Icon" class="form__button__image">
+          </button>
+        </form>
+      </div>
+      <div class="dialog__content__footer">
+        <button class="dialog__content__footer__button" type="submit">
+          PROCEED
+        </button>
+      </div>
+    </div>
+  </article>
   <iframe id="printing-frame" name="print_frame" src="about:blank" style="display:none;"></iframe>
   <script src="./scripts/index.js" async defer></script>
   <!-- Have to use this prebuilt solution as my own solution with all the edge cases handled would've taken more time. -->
