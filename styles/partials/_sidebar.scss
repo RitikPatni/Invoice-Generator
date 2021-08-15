@@ -1,9 +1,8 @@
 .sidebar {
   background-color: var(--color-sidebar);
-  color: var(--color-white);
+
   &__search-block {
-    background-color: var(--color-search-background);
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
     display: grid;
     gap: 1rem;
     &__input {
@@ -13,10 +12,58 @@
       background-size: 1rem;
       background-repeat: no-repeat;
       background-position: 5% center;
-      font-size: var(--font-base);
+      font-size: var(--font-size-base);
       background-color: var(--color-search-bar);
       color: var(--color-search-bar-text);
       border: none;
+    }
+    &__title {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-search-bar-title);
+      font-size: var(--font-size-sm);
+      padding: 0 01rem;
+      &__value {
+        color: var(--color-search-bar-count);
+      }
+    }
+  }
+  &__invoices {
+    &__invoice {
+      padding: 1rem 1.5rem;
+      font-size: var(--font-size-sm);
+      display: grid;
+      gap: 0.75rem;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-sidebar-invoice-primary);
+      border-top: 1px solid var(--color-sidebar-invoice-border);
+      &--selected {
+        background-color: var(--color-selected-invoice-background);
+        color: var(--color-white);
+      }
+      &__top-row {
+        display: flex;
+        justify-content: space-between;
+        &__time {
+          font-size: var(--font-size-xs);
+          color: var(--color-sidebar-invoice-time);
+        }
+      }
+      &__bottom-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        &__left {
+          display: grid;
+          gap: 0.5rem;
+          &__name {
+            color: var(--color-sidebar-invoice-name);
+          }
+        }
+        &__amount {
+          font-weight: var(--font-weight-bold);
+          font-size: var(--font-size-base);
+        }
+      }
     }
   }
 }

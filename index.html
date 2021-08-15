@@ -8,7 +8,7 @@
   <title>Invoice Generator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/index.css">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
@@ -25,114 +25,151 @@
       <section class="sidebar__search-block">
         <input type="search" name="search-invoice" id="search-invoice" aria-label="Enter Query to search invoice"
           placeholder="Search.." class="sidebar__search-block__input">
-        <h1>
-          Invoices - 54
+        <h1 class="sidebar__search-block__title">
+          Invoices - <span class="sidebar__search-block__title__value">54</span>
         </h1>
       </section>
-      <ul>
-        <li>
-          <div class="">
+      <ul class="sidebar__invoices">
+        <li class="sidebar__invoices__invoice sidebar__invoices__invoice--selected">
+          <div class="sidebar__invoices__invoice__top-row">
             <h4>
               Inv. #1 - 1122
             </h4>
-            <time>11:35 AM - Today</time>
+            <time class="sidebar__invoices__invoice__top-row__time">11:35 AM - Today</time>
           </div>
-          <div class="">
-            <p>Items - 03</p>
-            <p>Jeph Paul ALapat</p>
+          <div class="sidebar__invoices__invoice__bottom-row">
+            <div class="sidebar__invoices__invoice__bottom-row__left">
+              <p>Items - 03</p>
+              <p class="sidebar__invoices__invoice__bottom-row__left__name">Jeph Paul ALapat</p>
+            </div>
+            <p class="sidebar__invoices__invoice__bottom-row__amount">$1,240</p>
           </div>
-          <p>$1,240</p>
         </li>
-        <li>
-          <div class="">
+        <li class="sidebar__invoices__invoice">
+          <div class="sidebar__invoices__invoice__top-row">
             <h4>
-              Inv. #2 - 1234
+              Inv. #1 - 1122
             </h4>
-            <time>11:35 AM - Today</time>
+            <time class="sidebar__invoices__invoice__top-row__time">11:35 AM - Today</time>
           </div>
-          <div class="">
-            <p>Items - 03</p>
-            <p>Jeph Paul ALapat</p>
+          <div class="sidebar__invoices__invoice__bottom-row">
+            <div class="sidebar__invoices__invoice__bottom-row__left">
+              <p>Items - 03</p>
+              <p class="sidebar__invoices__invoice__bottom-row__left__name">Jeph Paul ALapat</p>
+            </div>
+            <p class="sidebar__invoices__invoice__bottom-row__amount">$1,240</p>
           </div>
-          <p>$1,240</p>
+        </li>
+        <li class="sidebar__invoices__invoice">
+          <div class="sidebar__invoices__invoice__top-row">
+            <h4>
+              Inv. #1 - 1122
+            </h4>
+            <time class="sidebar__invoices__invoice__top-row__time">11:35 AM - Today</time>
+          </div>
+          <div class="sidebar__invoices__invoice__bottom-row">
+            <div class="sidebar__invoices__invoice__bottom-row__left">
+              <p>Items - 03</p>
+              <p class="sidebar__invoices__invoice__bottom-row__left__name">Jeph Paul ALapat</p>
+            </div>
+            <p class="sidebar__invoices__invoice__bottom-row__amount">$1,240</p>
+          </div>
         </li>
       </ul>
     </aside>
-    <section>
-      <button>Add new Invoice</button>
-      <h2>Invoice Details</h2>
-      <section>
-        <div class="">
-          <div class="">
-            <h3>Invoice</h3>
+    <section class="invoice">
+      <button class="invoice__fab" aria-label="Add New Invoice" title="Add New Invoice"><img
+          src="./assets/plus-white@3x.png" alt="Plus icon" class="invoice__fab__image"></button>
+      <h2 class="invoice__title">INVOICE DETAILS</h2>
+      <section class="invoice__details" id="printable-area">
+        <div class="invoice__details__top-row">
+          <div class="invoice__details__top-row__left">
+            <h3 class="invoice__details__top-row__left__title">Invoice</h3>
             <p># INV1122</p>
-            <time>11:35 AM - Today</time>
+            <time class="invoice__details__top-row__left__time">11:35 AM - Today</time>
           </div>
-          <div class="">
-            <p>Customer Details</p>
-            <p>John Doe</p>
-            <a href="mail:johndoe@serviceprovider.com">
-              johndoe@serviceprovider.com
-            </a>
+          <div class="invoice__details__top-row__right">
+            <div class="invoice__details__top-row__right__content">
+              <p class="invoice__details__top-row__right__content__title">Customer Details</p>
+              <p class="invoice__details__top-row__right__content__name">John Doe</p>
+              <a href="mail:johndoe@serviceprovider.com" class="invoice__details__top-row__right__content__email">
+                johndoe@serviceprovider.com
+              </a>
+            </div>
+            <button class="invoice__details__top-row__right__button"
+              onclick="onclick=printJS({printable:'printable-area',type:'html',css:'./styles/index.css'})">
+              <p>PRINT</p> <img src="./assets/printer-blue@3x.png" alt="Printer Icon"
+                class="invoice__details__top-row__right__button__image">
+            </button>
           </div>
-          <button>
-            Print <img src="./assets/printer-blue@3x.png" alt="Printer Icon">
-          </button>
         </div>
-        <table>
-          <thead>
+        <table class="invoice__details__table">
+          <thead class="invoice__details__table__head">
             <tr>
-              <th>Item</th>
-              <th>Qty</th>
-              <th>Unit Price</th>
+              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-left">ITEM</th>
+              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-center">QUANTITY
+              </th>
               <!-- Added extra total in table so that user can see item wise total before seeing the total of all the items as it will ease up user calculation/cross-checking -->
-              <th>Total</th>
+              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-center">UNIT
+                PRICE</th>
+              <th class="invoice__details__table__head__item invoice__details__table__head__item--align-right">TOTAL
+              </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="invoice__details__table__body">
             <tr>
-              <td>Item 1</td>
-              <td>1</td>
-              <td>$100</td>
-              <td>$100</td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-left">Item 1
+              </td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">1</td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">$100
+              </td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-right">$100</td>
             </tr>
             <tr>
-              <td>Item 2</td>
-              <td>2</td>
-              <td>$200</td>
-              <td>$400</td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-left">Item 2
+              </td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">2</td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">$200
+              </td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-right">$400</td>
             </tr>
             <tr>
-              <td>Item 3</td>
-              <td>3</td>
-              <td>$300</td>
-              <td>$600</td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-left">Item 3
+              </td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">3</td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-center">$300
+              </td>
+              <td class="invoice__details__table__body__item invoice__details__table__body__item--align-right">$600</td>
             </tr>
           </tbody>
         </table>
-        <div class="">
-          <div class="">
-            <h3>Sub Total</h3>
-            <p>$1,240</p>
+        <div class="invoice__details__summary">
+          <div class="invoice__details__summary__row">
+            <h3 class="invoice__details__summary__row__title">Sub Total</h3>
+            <p class="invoice__details__summary__row__value">$1,240</p>
           </div>
-          <div class="">
-            <h3>Tax</h3>
-            <p>$0</p>
+          <div class="invoice__details__summary__row">
+            <h3 class="invoice__details__summary__row__title">Tax</h3>
+            <p class="invoice__details__summary__row__value">$0</p>
           </div>
-          <div class="">
-            <h3>Discount</h3>
-            <p>$0</p>
+          <div class="invoice__details__summary__row">
+            <h3 class="invoice__details__summary__row__title">Discount</h3>
+            <p class="invoice__details__summary__row__value">$0</p>
           </div>
         </div>
-        <div class="">
-          <div class="">
-            <h3>Grand Total</h3>
-            <p>$1,240</p>
+        <div class="invoice__details__total">
+          <div class="invoice__details__total__row">
+            <h3 class="invoice__details__total__row__title">Grand Total</h3>
+            <p class="invoice__details__total__row__value">$1,240</p>
           </div>
         </div>
       </section>
     </section>
   </main>
+  <iframe id="printing-frame" name="print_frame" src="about:blank" style="display:none;"></iframe>
+  <script src="./scripts/index.js" async defer></script>
+  <!-- Have to use this prebuilt solution as my own solution with all the edge cases handled would've taken more time. -->
+  <script src="https://printjs-4de6.kxcdn.com/print.min.js" async defer></script>
 </body>
 
 </html>
